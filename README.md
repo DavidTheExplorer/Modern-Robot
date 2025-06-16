@@ -1,7 +1,7 @@
 # Modern Robot
 Java has an old class that controlls both the mouse and keyboard, and it suffers from:
-* Boilerplate - You have to manage delays, remember to release pressed keys and in reverse order, handle CAPS LOCK...
-* Horrible Readability - Tapping even 1 key requires multiple lines full of bad constant names.
+* Boilerplate - You have to manage delays, remember to release keys in reverse order, handle CAPS LOCK...
+* Horrible Readability - Tapping even 1 key requires multiple lines full of bad constant names!
 
 This library solves those problems behind a `Mouse` and `Keyboard` abstractions that internally utilize the robot.
 
