@@ -14,5 +14,5 @@ public interface Keyboard
      *
      * @param keys The keys.
      */
-    void tap(FunctionKey... keys);
+    void tap(KeyboardFunction... keys);
 }

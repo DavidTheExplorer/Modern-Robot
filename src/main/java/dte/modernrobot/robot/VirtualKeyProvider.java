@@ -1,6 +1,6 @@
 package dte.modernrobot.robot;
 
-import dte.modernrobot.keyboard.FunctionKey;
+import dte.modernrobot.keyboard.KeyboardFunction;
 import dte.modernrobot.mouse.MouseAction;
 
 import java.awt.event.InputEvent;
@@ -15,9 +15,9 @@ public class VirtualKeyProvider
             MouseAction.WHEEL_CLICK, InputEvent.BUTTON2_DOWN_MASK
     );
 
-    private static final Map<FunctionKey, Integer> KEYBOARD_FUNCTION_KEYS = Map.of(
-            FunctionKey.ENTER, KeyEvent.VK_ENTER,
-            FunctionKey.CAPS_LOCK, KeyEvent.VK_CAPS_LOCK
+    private static final Map<KeyboardFunction, Integer> KEYBOARD_FUNCTION_KEYS = Map.of(
+            KeyboardFunction.ENTER, KeyEvent.VK_ENTER,
+            KeyboardFunction.CAPS_LOCK, KeyEvent.VK_CAPS_LOCK
     );
 
     public static int getFor(MouseAction action)
@@ -25,7 +25,7 @@ public class VirtualKeyProvider
         return getKey(MOUSE_VIRTUAL_KEYS, action);
     }
 
-    public static int getFor(FunctionKey action)
+    public static int getFor(KeyboardFunction action)
     {
         return getKey(KEYBOARD_FUNCTION_KEYS, action);
     }
