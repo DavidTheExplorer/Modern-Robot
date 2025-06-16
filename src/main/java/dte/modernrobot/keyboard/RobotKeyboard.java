@@ -21,7 +21,7 @@ public class RobotKeyboard implements Keyboard
     }
 
     @Override
-    public void tap(String text)
+    public void type(String text)
     {
         Objects.requireNonNull(text, "The text to type cannot be null.");
 
@@ -33,7 +33,7 @@ public class RobotKeyboard implements Keyboard
     }
 
     @Override
-    public void tap(KeyboardFunction... keys)
+    public void press(KeyboardFunction... keys)
     {
         ensureValidKeys(keys);
 
