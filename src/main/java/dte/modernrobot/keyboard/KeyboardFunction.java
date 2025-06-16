@@ -1,6 +1,6 @@
 package dte.modernrobot.keyboard;
 
-public enum FunctionKey
+public enum KeyboardFunction
 {
     ENTER, CAPS_LOCK;
 }

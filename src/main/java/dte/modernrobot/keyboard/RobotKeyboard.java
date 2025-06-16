@@ -33,7 +33,7 @@ public class RobotKeyboard implements Keyboard
     }
 
     @Override
-    public void tap(FunctionKey... keys)
+    public void tap(KeyboardFunction... keys)
     {
         ensureValidKeys(keys);
 
@@ -60,7 +60,7 @@ public class RobotKeyboard implements Keyboard
         return IntStream.of(virtualKey);
     }
 
-    private static void ensureValidKeys(FunctionKey... keys)
+    private static void ensureValidKeys(KeyboardFunction... keys)
     {
         Objects.requireNonNull(keys, "The keys to tap cannot be null.");
 
