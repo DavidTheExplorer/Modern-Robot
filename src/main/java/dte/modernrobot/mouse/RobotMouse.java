@@ -30,6 +30,6 @@ public class RobotMouse implements Mouse
     {
         Objects.requireNonNull(point, "The provided point cannot be null");
 
-        this.robot.getDelegate().mouseMove(point.x(), point.y());
+        this.robot.moveCursorTo(point.x(), point.y());
     }
 }

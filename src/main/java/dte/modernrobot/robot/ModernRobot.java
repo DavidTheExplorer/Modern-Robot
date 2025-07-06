@@ -14,11 +14,6 @@ public class ModernRobot
         this.delegate = delegate;
     }
 
-    public Robot getDelegate()
-    {
-        return this.delegate;
-    }
-
     /**
      * Presses and then releases every key in the provided {@code array}, with a delay between each release.
      *
@@ -35,6 +30,17 @@ public class ModernRobot
             release(key);
             this.delegate.delay(msDelay);
         }
+    }
+
+    /**
+     * Moves the cursor to the specificed {@code x, y} coordinates on the screen.
+     *
+     * @param x The x coordinate.
+     * @param y The y coordinate.
+     */
+    public void moveCursorTo(int x, int y)
+    {
+        this.delegate.mouseMove(x, y);
     }
 
     private void press(int key)
