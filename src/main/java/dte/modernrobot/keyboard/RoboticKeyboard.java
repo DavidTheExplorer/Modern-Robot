@@ -1,5 +1,6 @@
 package dte.modernrobot.keyboard;
 
+import dte.modernrobot.RoboticDevice;
 import dte.modernrobot.robot.ModernRobot;
 import dte.modernrobot.robot.VirtualKeyProvider;
 
@@ -9,15 +10,13 @@ import java.util.Arrays;
 import java.util.Objects;
 import java.util.stream.IntStream;
 
-public class RobotKeyboard implements Keyboard
+public class RoboticKeyboard extends RoboticDevice implements Keyboard
 {
-    private final ModernRobot robot;
-
     private static final Duration RELEASE_DELAY = Duration.ofMillis(50);
 
-    public RobotKeyboard(ModernRobot robot)
+    public RoboticKeyboard(ModernRobot robot)
     {
-        this.robot = robot;
+        super(robot);
     }
 
     @Override
@@ -26,7 +25,7 @@ public class RobotKeyboard implements Keyboard
         Objects.requireNonNull(text, "The text to type cannot be null.");
 
         int[] virtualKeys = text.chars()
-                .flatMap(RobotKeyboard::toVirtualKeys)
+                .flatMap(RoboticKeyboard::toVirtualKeys)
                 .toArray();
 
         press(virtualKeys);
@@ -46,7 +45,7 @@ public class RobotKeyboard implements Keyboard
 
     private void press(int... virtualKeys)
     {
-        this.robot.press(RELEASE_DELAY, virtualKeys);
+        robot().press(RELEASE_DELAY, virtualKeys);
     }
 
     private static IntStream toVirtualKeys(int asciiValue)
