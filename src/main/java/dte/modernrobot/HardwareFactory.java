@@ -1,9 +1,9 @@
 package dte.modernrobot;
 
 import dte.modernrobot.keyboard.Keyboard;
-import dte.modernrobot.keyboard.RobotKeyboard;
+import dte.modernrobot.keyboard.RoboticKeyboard;
 import dte.modernrobot.mouse.Mouse;
-import dte.modernrobot.mouse.RobotMouse;
+import dte.modernrobot.mouse.RoboticMouse;
 import dte.modernrobot.robot.ModernRobot;
 
 import java.awt.AWTException;
@@ -15,12 +15,12 @@ public class HardwareFactory
 
     public static Mouse createMouse()
     {
-        return new RobotMouse(ROBOT);
+        return new RoboticMouse(ROBOT);
     }
 
     public static Keyboard createKeyboard()
     {
-        return new RobotKeyboard(ROBOT);
+        return new RoboticKeyboard(ROBOT);
     }
 
     private static Robot createRobot()
