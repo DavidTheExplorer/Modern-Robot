@@ -5,6 +5,7 @@ import dte.modernrobot.robot.ModernRobot;
 import dte.modernrobot.robot.VirtualKeyProvider;
 
 import java.awt.event.KeyEvent;
+import java.time.Duration;
 import java.util.Arrays;
 import java.util.Objects;
 import java.util.stream.IntStream;
@@ -42,8 +43,12 @@ public class RoboticKeyboard extends RoboticDevice implements Keyboard
 
     private void press(TypingSpeed speed, int... virtualKeys)
     {
-        for(int key : virtualKeys)
+        //press all the keys except for the last
+        for(int key : Arrays.copyOfRange(virtualKeys, 0, virtualKeys.length -1))
             robot().press(speed.createNextLetterDelay(), key);
+
+        //press the last key without delay
+        robot().press(Duration.ZERO, virtualKeys[virtualKeys.length-1]);
     }
 
     private static IntStream toVirtualKeys(int asciiValue)
