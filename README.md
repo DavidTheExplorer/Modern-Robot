@@ -11,12 +11,12 @@ Example scenario: We want to type "Hey", press enter, and click the mouse at (10
 
 ### Modern Robot
 ```java
-//can and should be reused
+//should be reused
 Keyboard keyboard = HardwareFactory.createKeyboard();
 Mouse mouse = HardwareFactory.createMouse();
 
-keyboard.tap("Hey");
-keyboard.tap(ENTER); //static import of FunctionKey
+keyboard.type("Hey");
+keyboard.press(ENTER); //static import of KeyboardFunction
 
 mouse.performAt(LEFT_CLICK, new Point2D(100, 100)); //static import of MouseAction
 ```
