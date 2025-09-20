@@ -17,4 +17,9 @@ public interface TypingSpeed
     {
         return () -> delay;
     }
+
+    static TypingSpeed between(Duration min, Duration max)
+    {
+        return new RandomTypingSpeed(min, max);
+    }
 }
